@@ -5,25 +5,39 @@ import { getApi } from "../../js/api";
 import ShowProducts from "../../Components/ShowItems/ShowProducts";
 
 export default function Landing() {
-	const [data, setData] = useState(null);
+	const [products, setProducts] = useState(null);
 
 	useEffect(() => {
 		const reqData = getApi.get("/products");
-		reqData.then((res) => {
-            res.data
-        })
-        .then((res) => setData(res));
+
+		reqData.then((res) => res.data).then((res) => setProducts(res));
 	}, []);
 
-    console.log(data)
+	console.log(products);
 
-	const cate1 = data && data.filter(item => item.category == "men's clothing");
+	const cate1 =
+		products &&
+		products.filter((item) => item.category == "men's clothing");
+
+	const cate2 =
+		products && products.filter((item) => item.category == "jewelery");
 
 	return (
 		<div>
 			<Header />
 			<Brands />
-            <ShowProducts myArray={cate1} />
+
+			<div className="max-w-310 container">
+				<h2 className="font-extrabold text-3xl mt-10 text-center">
+					men's clothing
+				</h2>
+				<ShowProducts myArray={cate1} />
+
+				<h2 className="font-extrabold text-3xl mt-10 text-center">
+					jewelery
+				</h2>
+				<ShowProducts myArray={cate2} />
+			</div>
 		</div>
 	);
 }
