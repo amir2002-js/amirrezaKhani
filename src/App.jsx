@@ -1,29 +1,17 @@
-import { useEffect, useState } from "react";
-import { getApi } from "./js/api";
+import Landing from "./pages/Landing/Landing";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Layer from "./Layer";
 
 function App() {
-	const [data, setData] = useState(null);
-
-	useEffect(() => {
-		const reqData = getApi.get("/products");
-		reqData.then((res) => res.data).then((res) => setData(res));
-	}, []);
-
-	console.log(data);
-
 	return (
 		<>
-			{data ? (
-				<div className="flex gap-11 flex-wrap">
-					{data.map((item) => (
-						<div key={item.id}>
-							<img src={item.image} width="80px" alt="" />
-						</div>
-					))}
-				</div>
-			) : (
-				<span>jdsds</span>
-			)}
+			<BrowserRouter>
+				<Routes>
+					<Route element={<Layer />}>
+						<Route path="/" element={<Landing />} />
+					</Route>
+				</Routes>
+			</BrowserRouter>
 		</>
 	);
 }
