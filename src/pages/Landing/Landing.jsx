@@ -3,6 +3,8 @@ import Brands from "./Brands/Brands";
 import Header from "./Header/Header";
 import { getApi } from "../../js/api";
 import ShowProducts from "../../Components/ShowItems/ShowProducts";
+import DressStyle from "./DressStyle/DressStyle";
+import Comments from "./Comments/Comments";
 
 export default function Landing() {
 	const [products, setProducts] = useState(null);
@@ -37,7 +39,10 @@ export default function Landing() {
 					jewelery
 				</h2>
 				<ShowProducts myArray={cate2} />
+
+				<DressStyle />
 			</div>
+			<Comments />
 		</div>
 	);
 }
