@@ -47,7 +47,7 @@ export default function Footer() {
 				<div className=" max-w-310 container">
 					<div className="bg-gray-300 h-0.5 w-full my-5"></div>
 					<div className="pb-5 text-slate-600">
-					Shop.co © 2002-2025, All Rights Reserved
+					Shop.co © 2000-2025, All Rights Reserved
 					</div>
 				</div>
 			</div>

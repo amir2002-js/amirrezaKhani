@@ -25,7 +25,7 @@ export default function ShowProducts({ myArray }) {
 						breakpoints={{
 							400: {
 								slidesPerView: 1,
-								spaceBetween: 10,
+								spaceBetween: 0,
 							},
 							500: {
 								slidesPerView: 2,
@@ -43,7 +43,7 @@ export default function ShowProducts({ myArray }) {
 					>
 						{myArray.map((item) => (
 							<SwiperSlide
-								className=" w-[17rem] mb-12"
+								className="mb-12 mx-auto"
 								key={item.id}
 							>
 								<Cart

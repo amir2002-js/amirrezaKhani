@@ -31,7 +31,7 @@ export default function Landing() {
 
 			<div className="max-w-310 container">
 				<h2 className="font-extrabold text-3xl mt-10 text-center">
-					men's clothing
+					men&apos;s clothing
 				</h2>
 				<ShowProducts myArray={cate1} />
 

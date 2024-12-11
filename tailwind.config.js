@@ -19,9 +19,14 @@ export default {
 			maxWidth: {
 				310: "1240px",
 			},
-      colors:{
-        "primary-gray" : "#F0F0F0"
-      }
+			colors: {
+				"primary-gray": "#F0F0F0",
+			},
+
+			screens: {
+				msm: "390px",
+				xmd: "975px",
+			},
 		},
 	},
 	plugins: [],
