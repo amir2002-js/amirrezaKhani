@@ -46,7 +46,7 @@ export default function Products() {
 							<SideBar products={products} />
 						</div>
 						<div className="">
-							<Show myArr={myArr} products={filteredProducts} />
+							<Show myArr={myArr} products={filteredProducts} mainProducts={products} />
 							<div className="my-10 bg-black/15 h-px w-full"></div>
 							<Range
 								maxNum={maxNum}
