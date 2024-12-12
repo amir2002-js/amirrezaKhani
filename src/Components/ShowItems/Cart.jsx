@@ -6,7 +6,7 @@ export default function Cart({ url, title, price, rate, id}) {
 		<Link to={`/search/${id}`} className="hover:cursor-pointer m-3 box-border flex flex-col justify-center items-center">
 
 			{/* image */}
-			<span className="grow shrink size-[118px] sm:size-52 overflow-hidden ">
+			<span className="grow shrink size-40 sm:size-52 overflow-hidden ">
 				<img src={url} className="h-full w-full p-7" />
 			</span>
 
