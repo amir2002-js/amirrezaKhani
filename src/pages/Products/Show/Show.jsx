@@ -10,7 +10,7 @@ export default function Show({ myArr ,mainProducts }) {
 	const [showFilter , setShowFilter] = useState(false);
 	return (
 		<div>
-			<div className="flex justify-center items-baseline max-xmd:justify-between gap-12 max-xmd:mx-10">
+			<div className="flex justify-center items-baseline max-xmd:justify-between gap-12 max-xmd:mx-10 mt-4">
 				<h2 className="text-3xl font-extrabold mb-7 text-center xmd:mx-auto">
 					Casual
 				</h2>
