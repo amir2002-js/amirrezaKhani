@@ -14,9 +14,6 @@ export default function Navbar() {
 	// manage the close and open menu
 	const [showMenu, setShowMenu] = useState(false);
 
-	// manage the close and open menu
-	const [showSearch, setShowSearch] = useState(false);
-
 	// manage remove side menu from the dom
 	const [isVisible, setIsVisible] = useState(false);
 
@@ -38,8 +35,8 @@ export default function Navbar() {
 
 	return (
 		<>
-			<div className="z-40 py-6">
-				<section className="flex gap-10 max-sm:gap-5 items-center ">
+			<div className="z-40 py-6 flex flex-col justify-center items-center gap-7">
+				<section className="flex gap-10 max-sm:gap-5 items-center w-full ">
 					<div className="flex gap-3.5">
 						<ToggleMenu changeMenuState={changeMenuState} />
 
@@ -61,16 +58,6 @@ export default function Navbar() {
 
 					{/* icons */}
 					<ul className="flex items-center gap-4">
-						<li className="sm:hidden relative">
-							<button onClick={() => setShowSearch(p => !p)}>
-								<PiMagnifyingGlass className="text-xl" />
-							</button>
-							{showSearch && (
-								<div className="absolute w-[60svw] -translate-x-3/4">
-									<Form />
-								</div>
-							)}
-						</li>
 						<li>
 							<button>
 								<PiShoppingCartSimpleBold className="text-xl" />
@@ -83,6 +70,9 @@ export default function Navbar() {
 						</li>
 					</ul>
 				</section>
+				<div className="sm:hidden w-full">
+					<Form />
+				</div>
 			</div>
 
 			{/* side menu */}
