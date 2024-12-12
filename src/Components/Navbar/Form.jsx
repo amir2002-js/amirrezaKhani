@@ -14,7 +14,7 @@ export default function Form() {
 				e.preventDefault();
 				searchHandler(e.target[1].value.toLowerCase());
 
-				e.target[1].value = ""
+				e.target[1].value = "";
 			}}
 			action=""
 			className="max-w-full bg-primary-gray rounded-full py-2 px-3 flex gap-3"
