@@ -16,6 +16,15 @@ export default {
 		},
 
 		extend: {
+			keyframes:{
+				expanded:{
+					"0%" : {width : "0"},
+					"100%" : {width : "100%"},
+				}
+			},
+			animation:{
+				expanded : "expanded 300ms ease-in",
+			},
 			maxWidth: {
 				310: "1240px",
 			},

@@ -1,5 +1,9 @@
+import { Link } from "react-router-dom";
+
 export default function Logo() {
-  return (
-    <span className="text-3xl font-black uppercase">SHOP.CO</span>
-  )
+	return (
+		<Link to={"/"}>
+			<button className="text-3xl font-black uppercase">SHOP.CO</button>
+		</Link>
+	);
 }

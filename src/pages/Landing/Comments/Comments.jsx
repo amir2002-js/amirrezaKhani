@@ -4,58 +4,58 @@ import CommentCart from "../../../Components/CommentCart/CommentCart";
 import { useRef } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 
-export default function Comments() {
-	const comments = [
-		{
-			useName: "Arshia",
-			comment:
-				"lorem Ipsum is Lorem Ipsum islorem Ipsum is Lorem Ipsum islorem Ipsum is Lorem Ipsum islorem Ipsum is Lorem Ipsum islorem Ipsum is Lorem Ipsum is",
-			rate: 4.5,
-			id: 1,
-		},
-		{
-			useName: "Arsham",
-			comment: "lorem Ipsum is Lorem Ipsum is",
-			rate: 4.5,
-			id: 2,
-		},
-		{
-			useName: "Babak",
-			comment: "lorem Ipsum is Lorem Ipsum is",
-			rate: 4.5,
-			id: 3,
-		},
-		{
-			useName: "Baran",
-			comment: "lorem Ipsum is Lorem Ipsum is",
-			rate: 4.5,
-			id: 4,
-		},
-		{
-			useName: "Kian",
-			comment: "lorem Ipsum is Lorem Ipsum is",
-			rate: 4.5,
-			id: 5,
-		},
-		{
-			useName: "Mahsa",
-			comment: "lorem Ipsum is Lorem Ipsum is",
-			rate: 4.5,
-			id: 6,
-		},
-		{
-			useName: "Nima",
-			comment: "lorem Ipsum is Lorem Ipsum is",
-			rate: 4.5,
-			id: 7,
-		},
-		{
-			useName: "Mina89",
-			comment: "lorem Ipsum is Lorem Ipsum is",
-			rate: 4.5,
-			id: 8,
-		},
-	];
+export default function Comments({comments}) {
+	// const comments = [
+	// 	{
+	// 		useName: "Arshia",
+	// 		comment:
+	// 			"lorem Ipsum is Lorem Ipsum islorem Ipsum is Lorem Ipsum islorem Ipsum is Lorem Ipsum islorem Ipsum is Lorem Ipsum islorem Ipsum is Lorem Ipsum is",
+	// 		rate: 4.5,
+	// 		id: 1,
+	// 	},
+	// 	{
+	// 		useName: "Arsham",
+	// 		comment: "lorem Ipsum is Lorem Ipsum is",
+	// 		rate: 4.5,
+	// 		id: 2,
+	// 	},
+	// 	{
+	// 		useName: "Babak",
+	// 		comment: "lorem Ipsum is Lorem Ipsum is",
+	// 		rate: 4.5,
+	// 		id: 3,
+	// 	},
+	// 	{
+	// 		useName: "Baran",
+	// 		comment: "lorem Ipsum is Lorem Ipsum is",
+	// 		rate: 4.5,
+	// 		id: 4,
+	// 	},
+	// 	{
+	// 		useName: "Kian",
+	// 		comment: "lorem Ipsum is Lorem Ipsum is",
+	// 		rate: 4.5,
+	// 		id: 5,
+	// 	},
+	// 	{
+	// 		useName: "Mahsa",
+	// 		comment: "lorem Ipsum is Lorem Ipsum is",
+	// 		rate: 4.5,
+	// 		id: 6,
+	// 	},
+	// 	{
+	// 		useName: "Nima",
+	// 		comment: "lorem Ipsum is Lorem Ipsum is",
+	// 		rate: 4.5,
+	// 		id: 7,
+	// 	},
+	// 	{
+	// 		useName: "Mina89",
+	// 		comment: "lorem Ipsum is Lorem Ipsum is",
+	// 		rate: 4.5,
+	// 		id: 8,
+	// 	},
+	// ];
 
 	const slides = useRef(null);
 	function handelRight() {
@@ -120,9 +120,9 @@ export default function Comments() {
 						<SwiperSlide key={comment.id}>
 							<CommentCart
 								data={comments}
-								comment={comment.comment}
-								userName={comment.useName}
-								rate={comment.rate}
+								comment={comment.body}
+								userName={comment.user.fullName}
+								rate={comment.likes}
 							/>
 						</SwiperSlide>
 					))}

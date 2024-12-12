@@ -1,22 +1,28 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getApi } from "../../js/api";
-import { FaMinus, FaPlus } from "react-icons/fa";
-import Rate from "../../Components/ShowItems/Rate";
-import Divider from "../../Components/Divider/Divider";
+import { getApi, getCommentsApi } from "../../js/api";
 import Info from "./Info/Info";
+import Comments from "./Comments/Comments";
+import Divider from "../../Components/Divider/Divider";
+import Header from "./Header/Header";
 
 export default function Product() {
 	const { id } = useParams();
 
 	const [product, setProduct] = useState(null);
+	const [comments, setComments] = useState(null);
 
 	useEffect(() => {
 		const reqData = getApi(`/products/${id}`);
 		reqData.then((res) => res.data).then((res) => setProduct(res));
+
+		const reqComments = getCommentsApi();
+		reqComments
+			.then((comments) => comments.data)
+			.then((comments) => setComments(comments.comments))
+			.catch((err) => console.log(err));
 	}, []);
 
-	console.log(product);
 	return (
 		<>
 			{product && (
@@ -29,6 +35,13 @@ export default function Product() {
 
 						{/* info */}
 						<Info product={product} />
+					</div>
+
+					<Divider />
+					<Header />
+
+					<div className="">
+						<Comments comments={comments} />
 					</div>
 				</div>
 			)}
