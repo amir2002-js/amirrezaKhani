@@ -17,7 +17,7 @@ export default function Form() {
 				e.target[1].value = ""
 			}}
 			action=""
-			className="max-w-full bg-primary-gray rounded-full py-2 px-3 flex gap-3 max-sm:hidden"
+			className="max-w-full bg-primary-gray rounded-full py-2 px-3 flex gap-3"
 		>
 			<button>
 				<PiMagnifyingGlass className="text-xl" />

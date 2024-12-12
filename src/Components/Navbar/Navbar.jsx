@@ -14,6 +14,9 @@ export default function Navbar() {
 	// manage the close and open menu
 	const [showMenu, setShowMenu] = useState(false);
 
+	// manage the close and open menu
+	const [showSearch, setShowSearch] = useState(false);
+
 	// manage remove side menu from the dom
 	const [isVisible, setIsVisible] = useState(false);
 
@@ -51,15 +54,22 @@ export default function Navbar() {
 
 					{/* search part */}
 					<div className="grow">
-						<Form />
+						<div className="w-full max-sm:hidden">
+							<Form />
+						</div>
 					</div>
 
 					{/* icons */}
 					<ul className="flex items-center gap-4">
-						<li className="sm:hidden">
-							<button>
+						<li className="sm:hidden relative">
+							<button onClick={() => setShowSearch(p => !p)}>
 								<PiMagnifyingGlass className="text-xl" />
 							</button>
+							{showSearch && (
+								<div className="absolute w-[60svw] -translate-x-3/4">
+									<Form />
+								</div>
+							)}
 						</li>
 						<li>
 							<button>

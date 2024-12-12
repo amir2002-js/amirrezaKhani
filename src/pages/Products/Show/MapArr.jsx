@@ -1,7 +1,7 @@
 import Cart from "../../../Components/ShowItems/Cart";
 
 export default function MapArr({ products }) {
-
+	console.log(Boolean(products));
 	return (
 		<>
 			{products.map((item) => (
@@ -19,6 +19,11 @@ export default function MapArr({ products }) {
 					/>
 				</span>
 			))}
+			{products.length == 0 && (
+				<div className="flex justify-center items-center col-span-full px-2 py-20">
+					<img src="./img/notFound.png" />
+				</div>
+			)}
 		</>
 	);
 }

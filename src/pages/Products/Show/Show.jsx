@@ -6,7 +6,7 @@ import { useState } from "react";
 import SideBar from "../SideBar/SideBar";
 import MapArr from "./MapArr";
 
-export default function Show({ myArr , products ,mainProducts }) {
+export default function Show({ myArr ,mainProducts }) {
 	const [showFilter , setShowFilter] = useState(false);
 	return (
 		<div>
