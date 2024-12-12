@@ -11,7 +11,7 @@ export default function Rate({ rate }) {
 		arrStars.push(<FaStarHalf className="text-yellow-400 text-sm" />);
 	}
 	return (
-		<div className="flex justify-start items-center gap-2 text-sm font-semibold">
+		<div className="flex justify-center items-center gap-2 text-sm font-semibold">
 			<span className="flex">
 
 			{arrStars.map((item, i) => (

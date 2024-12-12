@@ -43,7 +43,7 @@ export default function ShowProducts({ myArray }) {
 					>
 						{myArray.map((item) => (
 							<SwiperSlide
-								className="mb-12 mx-auto"
+								className="mb-12"
 								key={item.id}
 							>
 								<Cart

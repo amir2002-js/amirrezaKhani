@@ -6,7 +6,7 @@ export default function MapArr({ products }) {
 		<>
 			{products.map((item) => (
 				<span
-					className="border border-black/5 hover:shadow-[0_0_10px__rgb(0,0,0,0.1)] flex items-stretch "
+					className="border border-black/5 hover:shadow-[0_0_10px__rgb(0,0,0,0.1)] flex items-center justify-center *:w-full "
 					key={item.id}
 				>
 					<Cart
