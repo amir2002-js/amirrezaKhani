@@ -6,8 +6,8 @@ export default function Cart({ url, title, price, rate, id}) {
 		<Link to={`/search/${id}`} className="hover:cursor-pointer  m-3 max-w-[18.5rem] flex flex-col justify-center items-center">
 
 			{/* image */}
-			<span className="grow">
-				<img src={url} className="w-[18.5rem] h-[100%] rounded-3xl shadow p-6" />
+			<span className="grow shrink">
+				<img src={url} className="w-[18.5rem] h-80 rounded-3xl shadow p-6" />
 			</span>
 
 			<div className="flex flex-col gap-2 items-start text-start mt-3">

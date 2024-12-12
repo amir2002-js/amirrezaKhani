@@ -4,6 +4,7 @@ import { GiSettingsKnobs } from "react-icons/gi";
 import Cart from "../../../Components/ShowItems/Cart";
 import { useState } from "react";
 import SideBar from "../SideBar/SideBar";
+import MapArr from "./MapArr";
 
 export default function Show({ myArr , products }) {
 	const [showFilter , setShowFilter] = useState(false);
@@ -21,21 +22,7 @@ export default function Show({ myArr , products }) {
 				<SideBar products={products}/>
 			</div>
 			<div className=" grid grid-cols-1 msm:grid-cols-2 md:grid-cols-3">
-				{myArr.map((item) => (
-					<span
-						className="border border-black/5 hover:shadow-[0_0_10px__rgb(0,0,0,0.1)] flex items-stretch "
-						key={item.id}
-					>
-						<Cart
-							url={item.image}
-							title={item.title}
-							price={item.price}
-							rate={item.rating.rate}
-							priceOff={item.price}
-							id={item.id}
-						/>
-					</span>
-				))}
+				<MapArr products={myArr} />
 			</div>
 		</div>
 	);

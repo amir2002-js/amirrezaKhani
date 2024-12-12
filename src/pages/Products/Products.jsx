@@ -3,6 +3,7 @@ import Show from "./Show/Show";
 import Range from "./SideBar/Range/Range";
 import SideBar from "./SideBar/SideBar";
 import { getApi } from "../../js/api";
+import { useLocation } from "react-router-dom";
 
 export default function Products() {
 	const [products, setProducts] = useState(null);
@@ -13,15 +14,27 @@ export default function Products() {
 		reqData.then((res) => res.data).then((res) => setProducts(res));
 	}, []);
 
+	const l = useLocation();
+	const q = new URLSearchParams(l.search).get("q");
 
+	let filteredProducts =
+		q && products
+			? products.filter(
+					(item) =>
+						item.title.toLowerCase().includes(q) ||
+						item.category.toLowerCase().includes(q)
+			  )
+			: products;
+
+			console.log(products)
 
 	const numOfShow = 10;
 	const [minShow, setMinShow] = useState(0);
 
-	let myArr = products && products.slice(minShow, minShow + numOfShow);
+	let myArr =
+		products && filteredProducts.slice(minShow, minShow + numOfShow);
 
-	const maxNum = products && Math.ceil(products.length / numOfShow);
-
+	const maxNum = products && Math.ceil(filteredProducts.length / numOfShow);
 
 	return (
 		<>
@@ -33,9 +46,13 @@ export default function Products() {
 							<SideBar products={products} />
 						</div>
 						<div className="">
-							<Show myArr={myArr} products={products} />
+							<Show myArr={myArr} products={filteredProducts} />
 							<div className="my-10 bg-black/15 h-px w-full"></div>
-							<Range maxNum={maxNum} setMinShow={setMinShow} numOfShow={numOfShow} />
+							<Range
+								maxNum={maxNum}
+								setMinShow={setMinShow}
+								numOfShow={numOfShow}
+							/>
 						</div>
 					</div>
 				</div>

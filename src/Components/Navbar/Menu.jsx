@@ -9,7 +9,7 @@ export default function Menu({ changeMenuState, showMenu }) {
 	const menu = [
 		{
 			title: "Shop",
-			link: "shop",
+			link: "search",
 			icon: <PiShoppingBag className="text-xl" />,
 			id: 1,
 		},
