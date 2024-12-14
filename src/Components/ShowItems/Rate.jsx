@@ -15,7 +15,7 @@ export default function Rate({ rate }) {
         );
     }
     return (
-        <div className="flex justify-center items-center gap-2 text-sm font-semibold">
+        <div className="flex items-center gap-2 text-sm font-semibold">
             <span className="flex">
                 {arrStars.map((item, i) => (
                     <span key={i}>{item}</span>

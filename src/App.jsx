@@ -7,8 +7,21 @@ import {
 import Layer from './Layer';
 import Products from './pages/Products/Products';
 import Product from './pages/ProductInfo/Product';
+import Basket from './pages/Basket/Basket';
+import { useEffect, useState } from 'react';
+import { getApi } from './js/api';
 
 function App() {
+    const [products, setProducts] = useState(null);
+
+    useEffect(() => {
+        const reqData = getApi.get('/products');
+
+        reqData
+            .then((res) => res.data)
+            .then((res) => setProducts(res))
+            .catch((err) => console.log(err));
+    }, []);
     return (
         <>
             <BrowserRouter>
@@ -17,6 +30,14 @@ function App() {
                         <Route
                             path="/"
                             element={<Landing />}
+                        />
+                        <Route
+                            path="/basket"
+                            element={
+                                <Basket
+                                    products={products}
+                                />
+                            }
                         />
                         <Route
                             path="/search"

@@ -1,7 +1,6 @@
 import Cart from '../../../Components/ShowItems/Cart';
 
 export default function MapArr({ products }) {
-    console.log(Boolean(products));
     return (
         <>
             {products.map((item) => (

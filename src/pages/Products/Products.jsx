@@ -32,8 +32,6 @@ export default function Products() {
               )
             : products;
 
-    console.log(products);
-
     const numOfShow = 10;
     const [minShow, setMinShow] = useState(0);
 

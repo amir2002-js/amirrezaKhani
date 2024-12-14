@@ -1,8 +1,23 @@
-import { FaMinus, FaPlus } from 'react-icons/fa';
 import Divider from '../../../Components/Divider/Divider';
 import Rate from '../../../Components/ShowItems/Rate';
+import { useEffect, useState } from 'react';
+import { setInShopBasket } from '../../../js/localstorage';
+import BtnGroup from '../../../Components/BtnGroup/BtnGroup';
 
 export default function Info({ product }) {
+    const [productNumber, setProductNumber] = useState(1);
+    const [myShopBasket, setMyShopBasket] = useState(null);
+
+    function addToShopBasket(newObj) {
+        setMyShopBasket(newObj);
+    }
+
+    useEffect(() => {
+        console.log(myShopBasket);
+        myShopBasket != null &&
+            setInShopBasket(myShopBasket);
+    }, [myShopBasket]);
+
     return (
         <>
             <div className="grow flex sm:min-w-96  flex-col 1.5xlg:justify-between gap-3 max-1.5xlg:w-full">
@@ -54,16 +69,20 @@ export default function Info({ product }) {
                 <Divider />
 
                 <div className="flex justify-center items-center gap-6 max-sm:flex-col w-full">
-                    <div className="bg-primary-gray flex justify-center max-sm:order-2 items-center *:w-10 *:h-10 *:flex *:justify-center *:items-center rounded-full overflow-hidden">
-                        <button className="hover:bg-black hover:text-white">
-                            <FaPlus />
-                        </button>
-                        <button>1</button>
-                        <button className="hover:bg-black hover:text-white">
-                            <FaMinus />
-                        </button>
-                    </div>
-                    <button className="grow capitalize max-sm:order-1 w-full bg-black text-white h-10 rounded-full">
+                    <BtnGroup
+                        setProductNumber={setProductNumber}
+                        productNumber={productNumber}
+                    />
+                    <button
+                        onClick={() => {
+                            let newObj = {
+                                id: product.id,
+                                num: productNumber,
+                            };
+                            addToShopBasket(newObj);
+                        }}
+                        className="grow capitalize max-sm:order-1 w-full bg-black text-white h-10 rounded-full"
+                    >
                         {' '}
                         add to cart
                     </button>

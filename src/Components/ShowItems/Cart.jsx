@@ -21,14 +21,16 @@ export default function Cart({
                 />
             </span>
 
-            <div className="flex flex-col gap-2 items-start text-start mt-3 *:w-full w-full *:text-center">
+            <div className="flex flex-col gap-2 items-start justify-center text-start mt-3 *:w-full w-full *:text-center">
                 {/* title */}
                 <p className="font-bold text-sm line-clamp-1 w-full h-4 ">
                     {title}
                 </p>
 
                 {/* rate */}
-                <Rate rate={rate} />
+                <div className="flex justify-center items-center">
+                    <Rate rate={rate} />
+                </div>
 
                 {/* price */}
                 <p className="font-light text-lg line-clamp-1">

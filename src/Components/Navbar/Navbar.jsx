@@ -9,6 +9,7 @@ import { useState } from 'react';
 import MobileMenu from './MobileMenu';
 import Menu from './Menu';
 import Logo from '../Logo/Logo';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
     // manage the close and open menu
@@ -63,12 +64,14 @@ export default function Navbar() {
                     {/* icons */}
                     <ul className="flex items-center gap-4">
                         <li>
-                            <button>
-                                <PiShoppingCartSimpleBold className="text-xl" />
+                            <button className="hover:bg-primary-gray p-2 rounded-[50%]">
+                                <Link to={'/basket'}>
+                                    <PiShoppingCartSimpleBold className="text-xl" />
+                                </Link>
                             </button>
                         </li>
                         <li>
-                            <button>
+                            <button className="hover:bg-primary-gray p-2 rounded-[50%]">
                                 <PiUserCircleBold className="text-xl" />
                             </button>
                         </li>

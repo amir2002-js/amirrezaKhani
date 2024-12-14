@@ -3,8 +3,6 @@ import { useState } from 'react';
 export default function Header() {
     const [numOfClk, setNumOfClk] = useState(2);
 
-    console.log(numOfClk);
-
     const myArr = ['FAQs', 'Reviews', 'Details'];
     return (
         <div className="flex justify-center items-center gap-5 *:grow my-5">
