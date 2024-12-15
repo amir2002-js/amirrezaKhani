@@ -18,7 +18,7 @@ export function setInShopBasket(obj) {
 export function removeInShopBasket(id) {
     let oldArr = getInShopBasket();
 
-    let newArr = oldArr.filter(item => item.id != id);
+    let newArr = oldArr.filter((item) => item.id != id);
 
     localStorage.shopBasket = JSON.stringify(newArr);
 }

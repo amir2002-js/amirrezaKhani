@@ -19,9 +19,10 @@ function App() {
 
         reqData
             .then((res) => res.data)
-            .then((res) => setProducts(res))
-            .catch((err) => console.log(err));
+            .then((res) => setProducts(res));
     }, []);
+    console.log(products);
+
     return (
         <>
             <BrowserRouter>
@@ -29,7 +30,11 @@ function App() {
                     <Route element={<Layer />}>
                         <Route
                             path="/"
-                            element={<Landing />}
+                            element={
+                                <Landing
+                                    product={products}
+                                />
+                            }
                         />
                         <Route
                             path="/basket"
@@ -41,7 +46,11 @@ function App() {
                         />
                         <Route
                             path="/search"
-                            element={<Products />}
+                            element={
+                                <Products
+                                    product={products}
+                                />
+                            }
                         />
                         <Route
                             path="/search/:id"

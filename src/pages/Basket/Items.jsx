@@ -14,7 +14,7 @@ export default function Items({
     rate,
     number,
     id,
-    setRerender
+    setRerender,
 }) {
     const [productNumber, setProductNumber] =
         useState(number);
@@ -67,7 +67,7 @@ export default function Items({
                 <button
                     onClick={() => {
                         removeInShopBasket(id);
-                        setRerender(p => !p);
+                        setRerender((p) => !p);
                     }}
                     className=""
                 >

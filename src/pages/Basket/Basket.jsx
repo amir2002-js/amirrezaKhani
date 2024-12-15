@@ -1,7 +1,4 @@
 import { getInShopBasket } from '../../js/localstorage';
-import Rate from '../../Components/ShowItems/Rate';
-import BtnGroup from '../../Components/BtnGroup/BtnGroup';
-import { GiTrashCan } from 'react-icons/gi';
 import Items from './Items';
 import Products from '../Products/Products';
 import { useState } from 'react';
@@ -18,11 +15,7 @@ export default function Basket({ products }) {
         basketProducts = products.filter((item) =>
             ids.includes(item.id),
         );
-        console.log(ids.indexOf(1));
     }
-
-    console.log(nums);
-    console.log(ids);
 
     return (
         <>
@@ -42,7 +35,9 @@ export default function Basket({ products }) {
                                         image={p.image}
                                         rate={p.rating.rate}
                                         title={p.title}
-                                        setRerender={setRerender}
+                                        setRerender={
+                                            setRerender
+                                        }
                                         number={
                                             nums[
                                                 ids.indexOf(

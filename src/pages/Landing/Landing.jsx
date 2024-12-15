@@ -5,18 +5,13 @@ import { getApi, getCommentsApi } from '../../js/api';
 import ShowProducts from '../../Components/ShowItems/ShowProducts';
 import DressStyle from './DressStyle/DressStyle';
 import Comments from './Comments/Comments';
+import Product from '../ProductInfo/Product';
 
-export default function Landing() {
-    const [products, setProducts] = useState(null);
+export default function Landing({ product }) {
+    const [products, setProducts] = useState(product);
     const [comments, setComments] = useState(null);
 
     useEffect(() => {
-        const reqData = getApi.get('/products');
-
-        reqData
-            .then((res) => res.data)
-            .then((res) => setProducts(res));
-
         const reqComments = getCommentsApi();
         reqComments
             .then((comments) => comments.data)
@@ -25,6 +20,10 @@ export default function Landing() {
             )
             .catch((err) => console.log(err));
     }, []);
+
+    useEffect(() => {
+        setProducts(product);
+    }, [product]);
 
     const cate1 =
         products &&

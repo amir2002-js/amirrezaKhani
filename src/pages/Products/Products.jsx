@@ -5,16 +5,12 @@ import SideBar from './SideBar/SideBar';
 import { getApi } from '../../js/api';
 import { useLocation } from 'react-router-dom';
 
-export default function Products() {
-    const [products, setProducts] = useState(null);
+export default function Products({ product }) {
+    const [products, setProducts] = useState(product);
 
     useEffect(() => {
-        const reqData = getApi.get('/products');
-
-        reqData
-            .then((res) => res.data)
-            .then((res) => setProducts(res));
-    }, []);
+        setProducts(product);
+    }, [product]);
 
     const l = useLocation();
     const q = new URLSearchParams(l.search).get('q');
