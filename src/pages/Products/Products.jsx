@@ -4,6 +4,7 @@ import Range from './SideBar/Range/Range';
 import SideBar from './SideBar/SideBar';
 import { getApi } from '../../js/api';
 import { useLocation } from 'react-router-dom';
+import Loading from '../LOADING/Loading';
 
 export default function Products({ product }) {
     const [products, setProducts] = useState(product);
@@ -44,7 +45,7 @@ export default function Products({ product }) {
 
     return (
         <>
-            {products && (
+            {products ? (
                 <div className="max-w-310 container">
                     <div className="w-full h-px bg-black/10 mb-2"></div>
                     <div className="flex max-xmd:justify-center xmd:justify-start items-stretch gap-7 h-full">
@@ -66,7 +67,8 @@ export default function Products({ product }) {
                         </div>
                     </div>
                 </div>
-            )}
+            ):(<Loading />)
+            }
         </>
     );
 }

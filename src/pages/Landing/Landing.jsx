@@ -6,6 +6,7 @@ import ShowProducts from '../../Components/ShowItems/ShowProducts';
 import DressStyle from './DressStyle/DressStyle';
 import Comments from './Comments/Comments';
 import Product from '../ProductInfo/Product';
+import Loading from '../LOADING/Loading';
 
 export default function Landing({ product }) {
     const [products, setProducts] = useState(product);
@@ -39,7 +40,7 @@ export default function Landing({ product }) {
 
     return (
         <>
-            {products && comments && (
+            {products && comments ? (
                 <div>
                     <Header />
                     <Brands />
@@ -61,7 +62,7 @@ export default function Landing({ product }) {
                         comments={comments.slice(3, 10)}
                     />
                 </div>
-            )}
+            ): <Loading />}
         </>
     );
 }

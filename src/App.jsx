@@ -21,7 +21,6 @@ function App() {
             .then((res) => res.data)
             .then((res) => setProducts(res));
     }, []);
-    console.log(products);
 
     return (
         <>

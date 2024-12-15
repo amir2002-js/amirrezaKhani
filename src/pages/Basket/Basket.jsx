@@ -25,7 +25,7 @@ export default function Basket({ products }) {
                         Basket
                     </div>
                     <div className="grid grid-cols-12 justify-center items-center gap-10">
-                        <div className="border border-black/25 rounded-3xl p-4 divide-y-2 flex flex-col gap-7 col-span-7">
+                        <div className="border border-black/25 rounded-3xl p-4 divide-y-2 flex flex-col gap-7 col-span-7 max-sm:col-span-full">
                             {basketProducts &&
                                 basketProducts.map((p) => (
                                     <Items
