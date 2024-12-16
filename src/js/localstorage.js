@@ -6,7 +6,7 @@ export function setInShopBasket(obj) {
         );
         index == -1
             ? oldArr.push(obj)
-            : (oldArr[index] = obj);
+            : oldArr[index].num++;
     } else {
         oldArr = [];
         oldArr.push(obj);
