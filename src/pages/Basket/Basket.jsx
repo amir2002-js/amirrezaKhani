@@ -35,7 +35,7 @@ export default function Basket({ products }) {
                             <div className="text-3xl font-black my-5">
                                 Basket
                             </div>
-                            <div className="grid grid-cols-12 max-sm:grid-cols-1 justify-center items-center gap-10 w-full mx-2">
+                            <div className="grid grid-cols-12 max-sm:grid-cols-1 justify-center items-center gap-10 w-full">
                                 <div className="border w-full border-black/15 shadow-lg rounded-3xl p-4 divide-y-2 flex flex-col gap-7 col-span-7 max-md:col-span-full">
                                     {basketProducts &&
                                         basketProducts.map(
