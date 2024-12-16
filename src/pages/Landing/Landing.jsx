@@ -62,7 +62,9 @@ export default function Landing({ product }) {
                         comments={comments.slice(3, 10)}
                     />
                 </div>
-            ): <Loading />}
+            ) : (
+                <Loading />
+            )}
         </>
     );
 }

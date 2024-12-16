@@ -1,6 +1,5 @@
 import { getInShopBasket } from '../../js/localstorage';
 import Items from './Items';
-import Products from '../Products/Products';
 import { useEffect, useState } from 'react';
 import Order from './Order';
 import NotFound from '../../Components/404/NotFound';
@@ -9,6 +8,7 @@ import Divider from '../../Components/Divider/Divider';
 export default function Basket({ products }) {
     const productsInStorage = getInShopBasket();
     const [rerender, setRerender] = useState(false);
+    
     const [nums, setNums] = useState(
         productsInStorage.map((i) => i.num),
     );
@@ -26,7 +26,7 @@ export default function Basket({ products }) {
     }, []);
 
     return (
-        <div className='max-w-310 container'>
+        <div className="max-w-310 container">
             <Divider />
             {productsInStorage.length > 0 ? (
                 <>

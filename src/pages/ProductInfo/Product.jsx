@@ -53,10 +53,9 @@ export default function Product() {
                         <Comments comments={comments} />
                     </div>
                 </div>
-            ):(
+            ) : (
                 <Loading />
-            )
-        }
+            )}
         </>
     );
 }

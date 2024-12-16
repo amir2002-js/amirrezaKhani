@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import { setInShopBasket } from '../../../js/localstorage';
 import BtnGroup from '../../../Components/BtnGroup/BtnGroup';
 
-
 export default function Info({ product }) {
     const [productNumber, setProductNumber] = useState(1);
     const [myShopBasket, setMyShopBasket] = useState(null);
@@ -75,7 +74,6 @@ export default function Info({ product }) {
                     />
                     <button
                         onClick={() => {
-                            
                             let newObj = {
                                 id: product.id,
                                 num: productNumber,

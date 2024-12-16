@@ -19,9 +19,7 @@ export default function MapArr({ products }) {
                     />
                 </span>
             ))}
-            {products.length == 0 && (
-            <NotFound />
-            )}
+            {products.length == 0 && <NotFound />}
         </>
     );
 }

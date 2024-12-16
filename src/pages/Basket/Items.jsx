@@ -37,10 +37,12 @@ export default function Items({
             num: productNumber,
         };
         addToShopBasket(newObj);
+        setNums(getInShopBasket().map((i) => i.num));
     }, [productNumber]);
 
     useEffect(() => {
         setNums(getInShopBasket().map((i) => i.num));
+        console.log("object")
     }, []);
 
     return (
