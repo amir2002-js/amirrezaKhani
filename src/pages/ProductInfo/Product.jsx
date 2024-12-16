@@ -5,6 +5,7 @@ import Info from './Info/Info';
 import Comments from './Comments/Comments';
 import Divider from '../../Components/Divider/Divider';
 import Header from './Header/Header';
+import Loading from '../LOADING/Loading';
 
 export default function Product() {
     const { id } = useParams();
@@ -29,7 +30,7 @@ export default function Product() {
 
     return (
         <>
-            {product && (
+            {product ? (
                 // <div className="grid grid-cols-2 max-w-310 container">
                 // 	<img src={product.image} alt="" />
                 // </div>
@@ -52,7 +53,10 @@ export default function Product() {
                         <Comments comments={comments} />
                     </div>
                 </div>
-            )}
+            ):(
+                <Loading />
+            )
+        }
         </>
     );
 }

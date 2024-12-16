@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { setInShopBasket } from '../../../js/localstorage';
 import BtnGroup from '../../../Components/BtnGroup/BtnGroup';
 
+
 export default function Info({ product }) {
     const [productNumber, setProductNumber] = useState(1);
     const [myShopBasket, setMyShopBasket] = useState(null);
@@ -13,7 +14,6 @@ export default function Info({ product }) {
     }
 
     useEffect(() => {
-        console.log(myShopBasket);
         myShopBasket != null &&
             setInShopBasket(myShopBasket);
     }, [myShopBasket]);
@@ -75,13 +75,15 @@ export default function Info({ product }) {
                     />
                     <button
                         onClick={() => {
+                            
                             let newObj = {
                                 id: product.id,
                                 num: productNumber,
                             };
+
                             addToShopBasket(newObj);
                         }}
-                        className="grow capitalize max-sm:order-1 w-full bg-black text-white h-10 rounded-full"
+                        className="grow capitalize max-sm:order-1 w-full bg-black text-white h-10 rounded-full active:scale-105 transition-all duration-75"
                     >
                         {' '}
                         add to cart

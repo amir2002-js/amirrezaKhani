@@ -3,6 +3,7 @@ import Rate from '../../Components/ShowItems/Rate';
 import BtnGroup from '../../Components/BtnGroup/BtnGroup';
 import { useEffect, useState } from 'react';
 import {
+    getInShopBasket,
     removeInShopBasket,
     setInShopBasket,
 } from '../../js/localstorage';
@@ -15,6 +16,7 @@ export default function Items({
     number,
     id,
     setRerender,
+    setNums,
 }) {
     const [productNumber, setProductNumber] =
         useState(number);
@@ -37,13 +39,17 @@ export default function Items({
         addToShopBasket(newObj);
     }, [productNumber]);
 
+    useEffect(() => {
+        setNums(getInShopBasket().map((i) => i.num));
+    }, []);
+
     return (
-        <div className="flex justify-between items-center gap-7 p-7 h-32">
-            <div className="flex justify-center items-center gap-5 h-24">
+        <div className="flex justify-between items-center gap-7 p-7 h-32 w-full">
+            <div className="flex justify-center items-center gap-5 h-20 w-20">
                 <img
                     src={image}
                     alt=""
-                    className="h-full"
+                    className="ml-20 object-contain max-w-full max-h-full"
                 />
                 <div className="">
                     {/* title */}

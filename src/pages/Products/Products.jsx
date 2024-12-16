@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import Show from './Show/Show';
 import Range from './SideBar/Range/Range';
 import SideBar from './SideBar/SideBar';
-import { getApi } from '../../js/api';
 import { useLocation } from 'react-router-dom';
 import Loading from '../LOADING/Loading';
 

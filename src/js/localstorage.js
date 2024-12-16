@@ -12,7 +12,6 @@ export function setInShopBasket(obj) {
         oldArr.push(obj);
     }
     localStorage.shopBasket = JSON.stringify(oldArr);
-    console.log(oldArr, 'shopBasket');
 }
 
 export function removeInShopBasket(id) {

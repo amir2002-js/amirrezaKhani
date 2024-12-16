@@ -1,3 +1,4 @@
+import NotFound from '../../../Components/404/NotFound';
 import Cart from '../../../Components/ShowItems/Cart';
 
 export default function MapArr({ products }) {
@@ -19,9 +20,7 @@ export default function MapArr({ products }) {
                 </span>
             ))}
             {products.length == 0 && (
-                <div className="flex justify-center items-center col-span-full px-2 py-20">
-                    <img src="./img/notFound.png" />
-                </div>
+            <NotFound />
             )}
         </>
     );
