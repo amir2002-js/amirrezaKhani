@@ -31,7 +31,7 @@ export default function Order({ nums, products, ids }) {
             </div>
             <Divider />
 
-            <button className="bg-primary-gray hover:bg-black capitalize w-full p-3 rounded-2xl hover:text-white transition-all duration-300">
+            <button className="bg-primary-gray active::bg-black capitalize w-full p-3 rounded-2xl active:text-white transition-all duration-300">
                 buy
             </button>
         </div>
