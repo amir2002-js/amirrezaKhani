@@ -7,7 +7,7 @@ import Divider from '../../Components/Divider/Divider';
 import Header from './Header/Header';
 import Loading from '../LOADING/Loading';
 
-export default function Product() {
+export default function Product({setAdded}) {
     const { id } = useParams();
 
     const [product, setProduct] = useState(null);
@@ -43,7 +43,7 @@ export default function Product() {
                         />
 
                         {/* info */}
-                        <Info product={product} />
+                        <Info product={product} setAdded={setAdded} />
                     </div>
 
                     <Divider />

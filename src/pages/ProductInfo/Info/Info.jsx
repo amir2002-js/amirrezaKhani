@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { setInShopBasket } from '../../../js/localstorage';
 import BtnGroup from '../../../Components/BtnGroup/BtnGroup';
 
-export default function Info({ product }) {
+export default function Info({ product , setAdded }) {
     const [productNumber, setProductNumber] = useState(1);
 
     return (
@@ -58,12 +58,14 @@ export default function Info({ product }) {
                 <Divider />
 
                 <div className="flex justify-center items-center gap-6 max-sm:flex-col w-full">
+                    
                     <BtnGroup
                         setProductNumber={setProductNumber}
                         productNumber={productNumber}
                     />
                     <button
                         onClick={() => {
+                            setAdded(true)
                             setInShopBasket({
                                 id: product.id,
                                 num: productNumber,

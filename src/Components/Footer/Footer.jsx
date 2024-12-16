@@ -37,7 +37,7 @@ export default function Footer() {
         ],
     ];
     return (
-        <div className="relative max-sm:-mt-20">
+        <div className="relative max-sm:-mt-20 z-0">
             <HeadOfFooter />
             <div className=" w-full bg-primary-gray">
                 <div className="flex max-lg:flex-col max-lg:items-start items-center pt-52 max-w-310 gap-8 container">

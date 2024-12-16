@@ -3,7 +3,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from './Components/Navbar/Navbar';
 import Footer from './Components/Footer/Footer';
 
-export default function Layer() {
+export default function Layer({setAdded , added}) {
     const param = useLocation();
 
     useEffect(() => {
@@ -13,7 +13,7 @@ export default function Layer() {
     return (
         <>
             <div className="container max-w-310">
-                <Navbar />
+                <Navbar setAdded={setAdded} added={added}/>
             </div>
             <Outlet />
             <Footer />

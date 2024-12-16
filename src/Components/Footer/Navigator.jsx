@@ -1,7 +1,7 @@
 export default function Navigator({ title, list }) {
     return (
         <div>
-            <div className="">
+            <div className="z-40">
                 <h2 className="font-semibold mb-4">
                     {title}
                 </h2>

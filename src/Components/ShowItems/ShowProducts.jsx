@@ -4,6 +4,7 @@ import 'swiper/css';
 import Divider from '../Divider/Divider';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css/pagination';
+import { Link } from 'react-router-dom';
 
 export default function ShowProducts({ myArray }) {
     return (
@@ -14,8 +15,7 @@ export default function ShowProducts({ myArray }) {
                         onSwiper={(swiper) => {
                             swiper.pagination.bullets.forEach(
                                 (bullet) =>
-                                    (bullet.style.backgroundColor =
-                                        'black'),
+                                    (bullet.style.backgroundColor = 'black'),
                             );
                         }}
                         pagination={{
@@ -46,10 +46,7 @@ export default function ShowProducts({ myArray }) {
                         }}
                     >
                         {myArray.map((item) => (
-                            <SwiperSlide
-                                className="mb-12"
-                                key={item.id}
-                            >
+                            <SwiperSlide className="mb-12" key={item.id}>
                                 <Cart
                                     url={item.image}
                                     title={item.title}
@@ -64,9 +61,11 @@ export default function ShowProducts({ myArray }) {
                 </div>
             )}
             <div className="text-center">
-                <button className="text-sm mt-4 font-semibold border border-primary-gray px-12 py-2 rounded-full hover:scale-105 hover:border-black/55 transition-all duration-300 shadow ">
-                    view all
-                </button>
+                <Link to={`/search?q=${myArray[0].category}`}>
+                    <button className="text-sm mt-4 font-semibold border border-primary-gray px-12 py-2 rounded-full hover:scale-105 hover:border-black/55 transition-all duration-300 shadow ">
+                        view all
+                    </button>
+                </Link>
             </div>
             <Divider />
         </div>
