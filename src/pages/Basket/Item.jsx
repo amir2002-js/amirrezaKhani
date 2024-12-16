@@ -7,12 +7,13 @@ export default function Item({
     item,
     increaseProductCount,
     decreaseProductCount,
+    removeProduct,
 }) {
     const {
         image,
         title,
         price,
-        rating: { rate }, // [array|object] destructuring
+        rating: { rate },
         id,
     } = item;
 
@@ -41,7 +42,7 @@ export default function Item({
             <div className="flex flex-col justify-between gap-7 items-end">
                 <button
                     onClick={() => {
-                        removeInShopBasket(id);
+                        removeProduct(id);
                     }}
                     className=""
                 >
