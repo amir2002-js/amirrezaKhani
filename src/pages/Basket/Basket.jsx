@@ -79,7 +79,7 @@ export default function Basket({ products }) {
                                         ))}
                                     {!basketProducts && <p>not order</p>}
                                 </div>
-                                <div className="p-6 border border-black/15 rounded-3xl max-md:col-span-full shadow-lg col-span-5 sticky top-5">
+                                <div className="p-6 border border-black/15 rounded-3xl max-md:col-span-full shadow-lg col-span-5 md:sticky top-5">
                                     <Order
                                         products={basketProducts}
                                         nums={nums}
